@@ -10,12 +10,15 @@ class Report extends Model
     use SoftDeletes;
 
     protected $fillable = [
+        'code',
         'resident_id',
         'report_category_id',
         'title',
         'description',
         'image',
-        'status',
+        'latitude',
+        'longitude',
+        'address',
     ];
 
     public function resident()

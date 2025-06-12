@@ -57,7 +57,9 @@ class ReportCategoryController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $category = $this->reportCategoryRepository->getReportCategoryById($id);
+
+        return view('pages.admin.category.show', compact('category'));
     }
 
     /**
@@ -93,6 +95,10 @@ class ReportCategoryController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $this->reportCategoryRepository->deleteReportCategory($id);
+
+        Swal::toast('Data Kategori Berhasil Dihapus', 'success')->timerProgressBar();
+
+        return redirect()->route('admin.report-category.index');
     }
 }
