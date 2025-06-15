@@ -48,6 +48,9 @@
                     @enderror
                 </div>
                 <div class="form-group">
+                    <p>Foto Profil Lama</p>
+                    <img src="{{ asset('storage/' . $resident->avatar) }}" alt="avatar" width="200">
+                    <br><br>
                     <label for="avatar">Foto Profil</label>
                     <input type="file" class="form-control @error('avatar') is-invalid @enderror" id="avatar"
                         name="avatar">

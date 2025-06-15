@@ -19,7 +19,7 @@
                 <tr>
                     <td>Gambar / Ikon</td>
                     <td>
-                        <img src="{{ asset('storage/report-category' . $category->image) }}" alt="image" width="200">
+                        <img src="{{ asset('storage/' . $category->image) }}" alt="image" width="200">
                     </td>
                 </tr>
             </table>

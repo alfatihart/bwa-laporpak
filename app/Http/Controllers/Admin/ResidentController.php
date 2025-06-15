@@ -24,6 +24,11 @@ class ResidentController extends Controller
     {
         $residents = $this->residentRepository->getAllResidents();
 
+        // Launch a confirmation dialog for deletion
+        $title = 'Delete Resident!';
+        $text = "Are you sure you want to delete?";
+        confirmDelete($title, $text);
+
         return view('pages.admin.resident.index', compact('residents'));
     }
 

@@ -25,6 +25,11 @@ class ReportCategoryController extends Controller
     {
         $categories = $this->reportCategoryRepository->getAllReportCategories();
 
+        // Launch a confirmation dialog for deletion
+        $title = 'Delete Report Category!';
+        $text = "Are you sure you want to delete?";
+        confirmDelete($title, $text);
+
         return view('pages.admin.category.index', compact('categories'));
     }
 

@@ -32,12 +32,15 @@
                                         class="btn btn-warning">Edit</a>
                                     <a href="{{ route('admin.report-category.show', $category->id) }}"
                                         class="btn btn-info">Show</a>
-                                    <form action="{{ route('admin.report-category.destroy', $category->id) }}"
+                                    <a href="{{ route('admin.report-category.destroy', $category->id) }}"
+                                        class="btn btn-danger" data-confirm-delete="true">Delete</a>
+
+                                    {{-- <form action="{{ route('admin.report-category.destroy', $category->id) }}"
                                         method="POST" class="d-inline">
-                                        @csrf
-                                        @method('DELETE')
+                                        /@csrf
+                                        /@method('DELETE')
                                         <button type="submit" class="btn btn-danger">Delete</button>
-                                    </form>
+                                    </form> --}}
                                 </td>
                             </tr>
                         @endforeach

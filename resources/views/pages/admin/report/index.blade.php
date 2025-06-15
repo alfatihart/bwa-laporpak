@@ -28,7 +28,7 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $report->code }}</td>
                                 <td>{{ $report->resident->user->name }}</td>
-                                <td>{{ $report->category->name }}</td>
+                                <td>{{ $report->reportCategory->name }}</td>
                                 <td>{{ $report->title }}</td>
                                 <td>
                                     <img src="{{ asset('storage/' . $report->image) }}" alt="image" width="100">
@@ -36,12 +36,15 @@
                                 <td>
                                     <a href="{{ route('admin.report.edit', $report->id) }}" class="btn btn-warning">Edit</a>
                                     <a href="{{ route('admin.report.show', $report->id) }}" class="btn btn-info">Show</a>
-                                    <form action="{{ route('admin.report.destroy', $report->id) }}" method="POST"
+                                    <a href="{{ route('admin.report.destroy', $report->id) }}" class="btn btn-danger"
+                                        data-confirm-delete="true">Delete</a>
+
+                                    {{-- <form action="{{ route('admin.report.destroy', $report->id) }}" method="POST"
                                         class="d-inline">
-                                        @csrf
-                                        @method('DELETE')
+                                        /@csrf
+                                        /@method('DELETE')
                                         <button type="submit" class="btn btn-danger">Delete</button>
-                                    </form>
+                                    </form> --}}
                                 </td>
                             </tr>
                         @endforeach

@@ -27,13 +27,13 @@ class Report extends Model
         return $this->belongsTo(Resident::class);
     }
 
-    public function category()
+    public function reportCategory()
     {
         // satu report dimiliki oleh satu kategori report
         return $this->belongsTo(ReportCategory::class);
     }
 
-    public function status()
+    public function reportStatuses()
     {
         // satu report memiliki banyak status
         return $this->hasMany(ReportStatus::class);

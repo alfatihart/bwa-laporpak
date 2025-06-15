@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\ReportCategoryController;
 use App\Http\Controllers\Admin\ReportController;
 use App\Http\Controllers\Admin\ResidentController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\ReportStatusController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -21,4 +22,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:admin'])->grou
     Route::resource('resident', ResidentController::class);
     Route::resource('report-category', ReportCategoryController::class);
     Route::resource('report', ReportController::class);
+
+    Route::get('/report-status/{report}/create', [ReportStatusController::class, 'create'])->name('report-status.create');
+    Route::resource('report-status', ReportStatusController::class)->except(['create']);
 });

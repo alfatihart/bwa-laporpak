@@ -34,12 +34,15 @@
                                         class="btn btn-warning">Edit</a>
                                     <a href="{{ route('admin.resident.show', $resident->id) }}"
                                         class="btn btn-info">Show</a>
-                                    <form action="{{ route('admin.resident.destroy', $resident->id) }}" method="POST"
+                                    <a href="{{ route('admin.resident.destroy', $resident->id) }}" class="btn btn-danger"
+                                        data-confirm-delete="true">Delete</a>
+
+                                    {{-- <form action="{{ route('admin.resident.destroy', $resident->id) }}" method="POST"
                                         class="d-inline">
-                                        @csrf
-                                        @method('DELETE')
+                                        /@csrf
+                                        /@method('DELETE')
                                         <button type="submit" class="btn btn-danger">Delete</button>
-                                    </form>
+                                    </form> --}}
                                 </td>
                             </tr>
                         @endforeach
